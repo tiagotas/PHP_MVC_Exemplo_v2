@@ -15,12 +15,13 @@ class PessoaDAO extends DAO
      * Método construtor, sempre chamado na classe quando a classe é instanciada.
      * Exemplo de instanciar classe (criar objeto da classe):
      * $dao = new PessoaDAO();
-     * Neste caso, assim que é instânciado, abre uma conexão com o MySQL (Banco de dados)
-     * A conexão é aberta via PDO (PHP Data Object) que é um recurso da linguagem para
-     * acesso a diversos SGBDs.
      */
     public function __construct()
     {
+        /**
+         * Chamando o construtor da classe DAO, isto é, toda vez que chamos o consturo da classe DAO
+         * estamos fazendo a conexão com o banco de dados.
+         */
         parent::__construct();       
     }
 

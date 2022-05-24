@@ -14,7 +14,9 @@ abstract class DAO
 
 
     /**
-     * 
+     *  Neste caso, assim que é instânciado, abre uma conexão com o MySQL (Banco de dados)
+     * A conexão é aberta via PDO (PHP Data Object) que é um recurso da linguagem para
+     * acesso a diversos SGBDs.
      */
     public function __construct()
     {

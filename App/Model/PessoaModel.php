@@ -72,13 +72,6 @@ class PessoaModel extends Model
 
         // Para saber mais operador ternário, leia: https://pt.stackoverflow.com/questions/56812/uso-de-e-em-php
         return ($obj) ? $obj : new PessoaModel(); // Operador Ternário
-
-        /*if($obj)
-        {
-            return  $obj;
-        } else {
-            return new PessoaModel();
-        }*/
     }
 
 

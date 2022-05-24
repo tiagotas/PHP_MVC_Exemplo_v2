@@ -2,7 +2,12 @@
 
 namespace App\Controller;
 
+/**
+ * Definimos aqui que nossa classe precisa incluir uma classe de outro subnamespace
+ * do projeto, no caso a classe PessoaModel do subnamespace Model
+ */
 use App\Model\PessoaModel;
+
 
 /**
  * Classes Controller são responsáveis por processar as requisições do usuário.
@@ -14,6 +19,8 @@ use App\Model\PessoaModel;
  */
 class PessoaController extends Controller
 {
+
+
     /**
      * Os métodos index serão usados para devolver uma View.
      * Para saber mais sobre métodos estáticos, leia: https://www.php.net/manual/pt_BR/language.oop5.static.php
@@ -24,11 +31,13 @@ class PessoaController extends Controller
         $model->getAllRows(); // Obtendo todos os registros, abastecendo a propriedade $rows da model.
 
         /**
-         * 
+         * O método render foi idealizado para encapsular o include de views de como que
+         * se o endereço de uma view por passado de forma equivocada nós possamos tratar
+         * o arquivo não encontrado e mostrar uma mensagem mais amigável ao usuário.
+         * Veja que o método recebe dois parâmetros: 1) caminho da view dentro da pasta modules
+         * e 2) o model da view da entidade em questão, este segundo arguimento é opcional.
          */
         parent::render('Pessoa/ListaPessoa', $model);
-
-        //include 'View/modules/Pessoa/ListaPessoa.php'; // Include da View, propriedade $rows da Model pode ser acessada na View
     }
 
 
@@ -44,8 +53,6 @@ class PessoaController extends Controller
             // Para saber mais sobre Typecast, leia: https://tiago.blog.br/type-cast-ou-conversao-de-tipos-do-php-isso-pode-te-ajudar-muito/
         
         parent::render('Pessoa/FormPessoa', $model);
-
-        //include 'View/modules/Pessoa/FormPesso.php'; // Include da View. Note que a variável $model está disponível na View.
     }
 
 

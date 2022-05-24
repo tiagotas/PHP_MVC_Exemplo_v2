@@ -1,9 +1,20 @@
 <?php
 
+/**
+ * Definição do namespace da controller. Veja que temos o namespace chamado "App"
+ * e dentro do namespace App temos o subnamespace "Controller". Também é importante
+ * observar que eles são o mesmo caminho de diretórios e usamos barra invertida
+ * para definir os namespaces.
+ * Leia mais sobre namespaces => http://www.diogomatheus.com.br/blog/php/entendendo-namespaces-no-php/
+ * Namespaces no manual => https://www.php.net/manual/pt_BR/language.namespaces.rationale.php
+ */
 namespace App\Controller;
 
+
 /**
- * 
+ * Classe abstrata Controller para armazenar métodos comuns às classes Controller.
+ * Manual do PHP => https://www.php.net/manual/pt_BR/language.oop5.abstract.php
+ * Leia mais sobre abstração: https://www.devmedia.com.br/trabalhando-com-abstracao-em-php/28351
  */
 abstract class Controller 
 {
