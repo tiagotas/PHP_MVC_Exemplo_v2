@@ -1,18 +1,16 @@
 <?php
 
+namespace App\DAO;
+
+use App\Model\PessoaModel;
+use \PDO;
+
 /**
  * As classes DAO (Data Access Object) são responsáveis por executar os
  * SQL junto ao banco de dados.
  */
-class PessoaDAO
+class PessoaDAO extends DAO
 {
-    /**
-     * Atributo (ou Propriedade) da classe destinado a armazenar o link (vínculo aberto)
-     * de conexão com o banco de dados.
-     */
-    private $conexao;
-
-
      /**
      * Método construtor, sempre chamado na classe quando a classe é instanciada.
      * Exemplo de instanciar classe (criar objeto da classe):
@@ -23,14 +21,7 @@ class PessoaDAO
      */
     public function __construct()
     {
-        // DSN (Data Source Name) onde o servidor MySQL será encontrado
-        // (host) em qual porta o MySQL está operado e qual o nome do banco pretendido
-        // Mais informações sobre DSN: https://www.php.net/manual/pt_BR/ref.pdo-mysql.connection.php
-        $dsn = "mysql:host=localhost:3306;dbname=db_mvc";
-
-        // Criando a conexão e armazenado na propriedade definida para tal.
-        // Veja o que é PDO: https://www.php.net/manual/pt_BR/intro.pdo.php
-        $this->conexao = new PDO($dsn, 'root', 'cajuru@2022');
+        parent::__construct();       
     }
 
 
@@ -111,7 +102,7 @@ class PessoaDAO
         $stmt->bindValue(1, $id);
         $stmt->execute();
 
-        return $stmt->fetchObject("PessoaModel"); // Retornando um objeto específico PessoaModel
+        return $stmt->fetchObject("App\Model\PessoaModel"); // Retornando um objeto específico PessoaModel
     }
 
 

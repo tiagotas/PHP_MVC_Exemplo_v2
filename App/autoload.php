@@ -1,26 +1,23 @@
 <?php
 
-spl_autoload_register(function ($nome_da_classe) {
+/**
+ * 
+ */
+spl_autoload_register(function ($nome_da_classe) 
+{
+    /**
+     * 
+     */
+    $arquivo = BASEDIR . $nome_da_classe . '.php';
 
-    //echo "Tentou dar include de: " . $nome_da_classe;
-
-    $classe_controller = 'Controller/' . $nome_da_classe . ".php";
-    $classe_model = 'Model/' . $nome_da_classe . ".php";
-    $classe_dao = 'DAO/' . $nome_da_classe . ".php";
-
-
-    if(file_exists($classe_controller))
+    
+    /**
+     * 
+     */
+    if(file_exists($arquivo))
     {
-        include $classe_controller;
+        include $arquivo;
 
-    } else if(file_exists($classe_model)) {
-
-        include $classe_model;
-
-    } else if(file_exists($classe_dao)) {
-        
-        include $classe_dao;
-    }
-
-    //include 'classes/' . $class . '.class.php';
+    } else
+        exit('Arquivo não encontrado. Arquivo: ' . $arquivo);
 });

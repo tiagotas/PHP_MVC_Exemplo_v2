@@ -1,6 +1,6 @@
 <?php
 
-//include 'Controller/PessoaController.php';
+use App\Controller\PessoaController;
 
 // Para saber mais sobre a função parse_url: https://www.php.net/manual/pt_BR/function.parse-url.php
 $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);

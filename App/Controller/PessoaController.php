@@ -1,5 +1,9 @@
 <?php
 
+namespace App\Controller;
+
+use App\Model\PessoaModel;
+
 /**
  * Classes Controller são responsáveis por processar as requisições do usuário.
  * Isso significa que toda vez que um usuário chama uma rota, um método (função)
@@ -8,7 +12,7 @@
  * buscar algo no banco de dados), redirecionar o usuário de rota, ou mesmo,
  * chamar outra Controller.
  */
-class PessoaController
+class PessoaController extends Controller
 {
     /**
      * Os métodos index serão usados para devolver uma View.
@@ -19,7 +23,12 @@ class PessoaController
         $model = new PessoaModel(); // Instância da Model
         $model->getAllRows(); // Obtendo todos os registros, abastecendo a propriedade $rows da model.
 
-        include 'View/modules/Pessoa/ListaPessoa.php'; // Include da View, propriedade $rows da Model pode ser acessada na View
+        /**
+         * 
+         */
+        parent::render('Pessoa/ListaPessoa', $model);
+
+        //include 'View/modules/Pessoa/ListaPessoa.php'; // Include da View, propriedade $rows da Model pode ser acessada na View
     }
 
 
@@ -33,8 +42,10 @@ class PessoaController
         if(isset($_GET['id'])) // Verificando se existe uma variável $_GET
             $model = $model->getById( (int) $_GET['id']); // Typecast e obtendo o model preenchido vindo da DAO.
             // Para saber mais sobre Typecast, leia: https://tiago.blog.br/type-cast-ou-conversao-de-tipos-do-php-isso-pode-te-ajudar-muito/
+        
+        parent::render('Pessoa/FormPessoa', $model);
 
-        include 'View/modules/Pessoa/FormPessoa.php'; // Include da View. Note que a variável $model está disponível na View.
+        //include 'View/modules/Pessoa/FormPesso.php'; // Include da View. Note que a variável $model está disponível na View.
     }
 
 
