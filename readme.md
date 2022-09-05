@@ -14,6 +14,11 @@
 
 Olá! Esse projeto faz parte da disciplina Programação Web com PHP. Nesta disciplina estudamos conceitos de Orientação a Objetos e Padrão MVC. Neste repositório você verá a implementação do MVC em PHP com os recursos: **Autoload de Classes**, **Namespaces**, **Herança**, **laço Try Catch**, **Métodos Estáticos** e **Constantes**.
 
+## Primeira Parte do Projeto
+Você está vendo a continuação de um projeto. Para entender os conceitos vistos aqui, dê uma olhada no repositório e nas respectivas videoaulas. Link abaixo:
+- https://github.com/tiagotas/PHP_MVC_Exemplo_v1
+- Se você precisa configurar o ambiente de desenvolvimento, dê uma olhada nesta playlist: https://www.youtube.com/playlist?list=PLHVpcBDJr5dn5xP1FWclsDgSSVNLzPit7
+
 ## Como ver funcionando:
 - Faça o Forward Engineer do Banco de Dados no MySQL Workbench
 - Abra a pasta App no VS Code e via terminal inicialize o servidor do PHP
@@ -28,10 +33,10 @@ Olá! Esse projeto faz parte da disciplina Programação Web com PHP. Nesta disc
 ### VIDEOAULA 3 - AUTOLOAD DE CLASSES (18min):
 
 - 00:00 - Introdução
-- 01:27 - Função spl_autopload_register()
+- 01:27 - Função ```spl_autopload_register()```
 - 02:40 - Separando arquivo de rotas e autoload
-- 06:14 - Implementação spl_autopload_register()
-- 11:08 - Função file_exists()
+- 06:14 - Implementação ```spl_autopload_register()```
+- 11:08 - Função ```file_exists()```
 
 ### VIDEOAULA 4 - NAMESPACES E AUTOLOAD (21min):
 
@@ -40,9 +45,9 @@ Olá! Esse projeto faz parte da disciplina Programação Web com PHP. Nesta disc
 - 01:55 - Autoload e Namespaces
 - 03:50 - Definindo o Namespace
 - 05:07 - Namespace global
-- 07:50 - Comando Use e Namespaces
+- 07:50 - Comando ```use``` e ```namespaces```
 - 11:54 - Namespaces e diretórios
-- 13:28 - Ajutes na spl_autoload_register para Namespaces
+- 13:28 - Ajutes na ```spl_autoload_register``` para Namespaces
 
 ### VIDEOAULA 5 - HERANÇA CONSTANTES E CLASSES ABSTRATAS (45min):
 
@@ -54,10 +59,10 @@ Olá! Esse projeto faz parte da disciplina Programação Web com PHP. Nesta disc
 - 09:08 - Chamando o Construtor da Superclass
 - 11:42 - Encapsulamento de funções
 - 14:30 - Parâmetros com valor padrão
-- 22:40 - Diferença entre public e protected
+- 22:40 - Diferença entre ```public``` e ```protected```
 - 23:00 - Classes abstratas
 - 26:40 - Arquivo de Configuração
-- 27:00 - Variável $_ENV do PHP
+- 27:00 - Variável ```$_ENV``` do PHP
 - 29:26 - Definição de constantes em PHP
 - 41:01 - Autoload com Constantes
 - 43:44 - Conclusão
